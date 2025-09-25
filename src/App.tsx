@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import FAQ from "./pages/faq";
 import Terms from "./pages/termsAndConditions"
+import Navbar from "@/components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navbar />
+        <div className="pt-16"></div>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/faq" element={<FAQ />} />
