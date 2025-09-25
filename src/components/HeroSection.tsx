@@ -27,7 +27,7 @@ const HeroSection = () => {
             <img 
               src={cardsImage} 
               alt="Virtual crypto cards" 
-              className="w-[400px] h-auto float-animation"
+              className="w-[900px] h-auto float-animation"
             />
           </div>
         </div>
