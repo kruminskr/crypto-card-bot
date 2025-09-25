@@ -9,16 +9,16 @@ const Footer = () => {
           
           <div className="flex gap-8">
             <a 
-              href="#faq" 
+              href="/faq" 
               className="text-foreground-secondary hover:text-foreground transition-colors duration-300"
             >
               FAQ
             </a>
             <a 
-              href="#contact" 
+              href="/terms" 
               className="text-foreground-secondary hover:text-foreground transition-colors duration-300"
             >
-              Contact
+              Terms & Conditions
             </a>
           </div>
         </div>
