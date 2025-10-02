@@ -56,11 +56,7 @@ const HeroSection = () => {
 
             <h1
               className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black leading-tight text-white"
-              style={{
-                  WebkitTextStroke: "0.5px black", 
-                  color: "white",
-                  ...(window.innerWidth <= 640 ? { WebkitTextStroke: "0.5px black" } : { WebkitTextStroke: "1px black" }), 
-                }}
+              style={{ color: 'white', textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}
             >
               Power up your ADS account with Papa BIN
             </h1>
