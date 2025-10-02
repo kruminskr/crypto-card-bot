@@ -35,7 +35,7 @@ const HeroSection = () => {
   return (
     <section
       /*  Mobile: shorter hero, Desktop: full-screen  */
-      className="hero-gradient min-h-[50vh] md:min-h-screen flex relative overflow-hidden"
+      className="hero-gradient min-h-[60vh] md:min-h-screen flex relative overflow-hidden"
       style={{
         backgroundImage: `url(${banners[currentBannerIndex]})`,
         backgroundSize: "cover",
@@ -55,10 +55,10 @@ const HeroSection = () => {
             />
 
             <h1
-              className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black leading-tight text-white"
               style={{
-                textShadow:
-                  "2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000",
+                WebkitTextStroke: "1px black",   // black border
+                color: "white",                  // white fill
               }}
             >
               Power up your ADS account with Papa BIN

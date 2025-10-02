@@ -150,7 +150,7 @@
 
   /* Button Variants */
   .btn-crypto {
-    background: hsl(var(--button));
+    background: black;
     color: hsl(var(--button-foreground));
     transition: all 0.3s ease;
   }
