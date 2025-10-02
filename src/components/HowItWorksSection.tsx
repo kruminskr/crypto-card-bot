@@ -27,11 +27,11 @@ const HowItWorksSection = () => {
             How it works
           </h2>
           
-          <div className="flex flex-row flex-nowrap gap-6 sm:gap-12">
+          <div className="flex flex-row justify-center gap-3 sm:gap-12">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col space-y-2 sm:space-y-6 min-w-[110px] sm:min-w-0 text-center sm:text-center"
+                className="flex flex-col space-y-2 sm:space-y-6 flex-1 max-w-[110px] sm:max-w-none text-center"
               >
                 <div className="icon-container w-12 h-12 sm:w-20 sm:h-20 mx-auto">
                   <step.icon className="w-6 h-6 sm:w-10 sm:h-10 text-gray-900 icon-image" />
