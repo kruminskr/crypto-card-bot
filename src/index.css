@@ -112,7 +112,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    /* @apply border-border; */
   }
 
   body {
@@ -168,6 +168,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .icon-image {
+    color: white !important;
   }
 
   .bitcoin-icon {

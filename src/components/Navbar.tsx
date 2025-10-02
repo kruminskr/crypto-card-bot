@@ -79,21 +79,21 @@ const Navbar = () => {
           <div className="border-t border-slate-700/50 pt-4 space-y-3">
             <Link
               to="/"
-              className="block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              className="text-xs sm:text-base block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/faq"
-              className="block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              className="text-xs sm:text-base block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
             </Link>
             <Link
               to="/terms"
-              className="block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
+              className="text-xs sm:text-base block text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Terms
