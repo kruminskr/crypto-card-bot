@@ -6,55 +6,59 @@ import cardsHero from "@/assets/cards-hero.png";
 const HeroSection = () => {
   return (
     <section 
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative flex items-center overflow-hidden"
       style={{
         backgroundImage: `url(${heroBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        minHeight: '70vh',
       }}
     >
       {/* Content Container */}
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
         <div className="relative max-w-7xl mx-auto">
-          {/* Logo */}
-          <div className="mb-8 md:mb-12">
+          
+          {/* Left Side - Logo, Text, Button */}
+          <div className="max-w-[280px] sm:max-w-xs md:max-w-sm space-y-4 sm:space-y-6">
+            {/* Logo */}
+            <div>
+              <img 
+                src={logo} 
+                alt="Papa Bin Logo" 
+                className="w-24 sm:w-32 md:w-36 lg:w-40 h-auto drop-shadow-lg"
+              />
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white drop-shadow-lg">
+              Power up your ADS account with Papa BIN
+            </h1>
+
+            {/* CTA Button */}
+            <button className="bg-slate-600/90 hover:bg-slate-500/90 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg text-sm sm:text-base md:text-lg font-medium transition-all duration-200 backdrop-blur-sm shadow-lg hover:shadow-xl">
+              Start Telegram bot
+            </button>
+          </div>
+
+          {/* Right Side - Cards and Character (Absolutely Positioned) */}
+          
+          {/* Cards - Mid-Right */}
+          <div className="absolute top-0 right-0 sm:right-4 md:right-8 lg:right-16 w-36 sm:w-48 md:w-56 lg:w-72 xl:w-80 z-20 pointer-events-none">
             <img 
-              src={logo} 
-              alt="Papa Bin Logo" 
-              className="w-32 md:w-40 h-auto"
+              src={cardsHero} 
+              alt="Virtual cards stack" 
+              className="w-full h-auto drop-shadow-2xl float-animation"
             />
           </div>
 
-          {/* Main Content Area */}
-          <div className="relative">
-            {/* Left Side - Text Content */}
-            <div className="max-w-md md:max-w-lg space-y-6 md:space-y-8">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg">
-                Power up your ADS account with Papa BIN
-              </h1>
-              <button className="bg-slate-700/80 hover:bg-slate-600/80 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-200 backdrop-blur-sm">
-                Start Telegram bot
-              </button>
-            </div>
-
-            {/* Cards - Top Right */}
-            <div className="absolute -top-8 right-0 md:right-12 lg:right-20 w-48 md:w-64 lg:w-80 z-20 pointer-events-none">
-              <img 
-                src={cardsHero} 
-                alt="Virtual cards" 
-                className="w-full h-auto drop-shadow-2xl float-animation"
-              />
-            </div>
-
-            {/* Character - Bottom Right */}
-            <div className="absolute -bottom-32 -right-8 md:-bottom-40 md:right-0 lg:-bottom-48 lg:right-8 w-56 md:w-72 lg:w-96 z-10 pointer-events-none">
-              <img 
-                src={character} 
-                alt="Papa Bin Character" 
-                className="w-full h-auto drop-shadow-2xl"
-              />
-            </div>
+          {/* Character - Bottom Right */}
+          <div className="absolute bottom-0 right-0 sm:right-2 md:right-4 lg:right-8 w-32 sm:w-40 md:w-48 lg:w-64 xl:w-72 z-10 pointer-events-none">
+            <img 
+              src={character} 
+              alt="Papa Bin Character" 
+              className="w-full h-auto drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
