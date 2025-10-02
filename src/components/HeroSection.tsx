@@ -1,34 +1,60 @@
-import { Smartphone } from "lucide-react";
-import cardsImage from "@/assets/cards.png";
+import heroBackground from "@/assets/hero-background.jpg";
+import character from "@/assets/character.png";
+import logo from "@/assets/logo.png";
+import cardsHero from "@/assets/cards-hero.png";
 
 const HeroSection = () => {
   return (
-    <section className="hero-gradient min-h-screen flex items-center">
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left Column - Content */}
-          <div className="space-y-8 fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Virtual crypto cards and account top-ups
-            </h1>
-            <p className="text-lg md:text-xl text-foreground-secondary leading-relaxed">
-              Issue virtual cards and top up your account with cryptocurrencies via Telegram bot
-            </p>
-            <button className="btn-crypto px-8 py-4 rounded-xl text-lg font-medium inline-flex items-center gap-3">
-              Start Telegram bot
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17L10.5 10.84L12.19 12.53L15 9.72L19.83 14.55L21 13.38L18.38 10.76L21 8.14Z"/>
-              </svg>
-            </button>
+    <section 
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Content Container */}
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="relative max-w-7xl mx-auto">
+          {/* Logo */}
+          <div className="mb-8 md:mb-12">
+            <img 
+              src={logo} 
+              alt="Papa Bin Logo" 
+              className="w-32 md:w-40 h-auto"
+            />
           </div>
 
-          {/* Right Column - Phone Mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <img 
-              src={cardsImage} 
-              alt="Virtual crypto cards" 
-              className="w-[900px] h-auto float-animation"
-            />
+          {/* Main Content Area */}
+          <div className="relative">
+            {/* Left Side - Text Content */}
+            <div className="max-w-md md:max-w-lg space-y-6 md:space-y-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white drop-shadow-lg">
+                Power up your ADS account with Papa BIN
+              </h1>
+              <button className="bg-slate-700/80 hover:bg-slate-600/80 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-200 backdrop-blur-sm">
+                Start Telegram bot
+              </button>
+            </div>
+
+            {/* Cards - Top Right */}
+            <div className="absolute -top-8 right-0 md:right-12 lg:right-20 w-48 md:w-64 lg:w-80 z-20 pointer-events-none">
+              <img 
+                src={cardsHero} 
+                alt="Virtual cards" 
+                className="w-full h-auto drop-shadow-2xl float-animation"
+              />
+            </div>
+
+            {/* Character - Bottom Right */}
+            <div className="absolute -bottom-32 -right-8 md:-bottom-40 md:right-0 lg:-bottom-48 lg:right-8 w-56 md:w-72 lg:w-96 z-10 pointer-events-none">
+              <img 
+                src={character} 
+                alt="Papa Bin Character" 
+                className="w-full h-auto drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
