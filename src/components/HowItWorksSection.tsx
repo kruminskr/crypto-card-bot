@@ -40,7 +40,7 @@ const HowItWorksSection = () => {
                   <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-base text-gray-600 leading-tight">
+                  <p className="text-xs sm:text-base text-gray-600 leading-tight hidden md:block">
                     {step.description}
                   </p>
                 </div>

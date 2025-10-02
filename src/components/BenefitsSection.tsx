@@ -6,16 +6,19 @@ const BenefitsSection = () => {
       icon: Shield,
       title: "Security",
       description: "Your funds are safe with bank-level encryption and secure protocols",
+      mobileDescription: "Your funds are safe",
     },
     {
       icon: Zap,
       title: "Speed",
       description: "Instant transactions and real-time card activation for immediate use",
+      mobileDescription: "Instant transactions",
     },
     {
       icon: Eye,
       title: "Anonymity",
       description: "Private and secure transactions with minimal personal data required",
+      mobileDescription: "Private and secure",
     },
   ];
 
@@ -27,19 +30,22 @@ const BenefitsSection = () => {
             Benefits
           </h2>
           
-          <div className="flex flex-row flex-nowrap gap-4 sm:gap-12">
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-4 sm:gap-12">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex flex-col space-y-2 sm:space-y-4 min-w-[110px] sm:min-w-0 text-center"
+                className="flex flex-col items-center space-y-2 sm:space-y-4 min-w-[110px] sm:min-w-0 text-center"
               >
                 <benefit.icon className="w-5 h-5 sm:w-8 sm:h-8 text-gray-900 mx-auto" />
                 <div>
                   <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs sm:text-base text-gray-600 leading-tight">
+                  <p className="text-xs sm:text-base text-gray-600 leading-tight hidden md:block">
                     {benefit.description}
+                  </p>
+                  <p className="text-xs sm:text-base text-gray-600 leading-tight md:hidden">
+                    {benefit.mobileDescription}
                   </p>
                 </div>
               </div>
