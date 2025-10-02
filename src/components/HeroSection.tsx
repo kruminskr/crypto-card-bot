@@ -1,33 +1,88 @@
-import { Smartphone } from "lucide-react";
+import { useState, useEffect } from "react";
 import cardsImage from "@/assets/cards.png";
+import charecterImage1 from "@/assets/charecter_1.png";
+import charecterImage3 from "@/assets/charecter_3.png";
+import charecterImage4 from "@/assets/charecter_4.png";
+import charecterImage5 from "@/assets/charecter_5.png";
+import logo from "@/assets/logo-small.png";
+import backgroundImage1 from "@/assets/BANERIS_1_FONS.jpg";
+import backgroundImage2 from "@/assets/BANERIS_2_FONS.jpg";
+import backgroundImage3 from "@/assets/BANERIS_3_FONS.jpg";
+import backgroundImage4 from "@/assets/BANERIS_4_FONS.jpg";
+import backgroundImage5 from "@/assets/BANERIS_5_FONS.jpg";
+
+const banners = [backgroundImage1, backgroundImage2, backgroundImage3, backgroundImage4, backgroundImage5];
+
+const charecters = [
+  charecterImage1,
+  charecterImage1,
+  charecterImage3,
+  charecterImage4,
+  charecterImage5,
+];
 
 const HeroSection = () => {
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+
+  // rotate banner every 10 s
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentBannerIndex((i) => (i + 1) % banners.length);
+    }, 10_000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <section className="hero-gradient min-h-screen flex items-center">
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Left Column - Content */}
-          <div className="space-y-8 fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Virtual crypto cards and account top-ups
+    <section
+      /*  Mobile: shorter hero, Desktop: full-screen  */
+      className="hero-gradient min-h-[50vh] md:min-h-screen flex relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${banners[currentBannerIndex]})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="container mx-auto self-center px-4 sm:px-6 py-0 ">
+        {/* 2-column grid on *all* screens */}
+        <div className="grid grid-cols-2 gap-4 items-center -mb-4 sm:gap-6 max-w-6xl mx-auto h-full">
+          {/* ───── LEFT – TEXT ───── */}
+          <div className="space-y-6 sm:space-y-6">
+            <img
+              src={logo}
+              alt="Papa BIN Logo"
+              className="w-16 sm:w-40 md:w-40 h-auto"
+            />
+
+            <h1
+              className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              style={{
+                textShadow:
+                  "2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000",
+              }}
+            >
+              Power up your ADS account with Papa BIN
             </h1>
-            <p className="text-lg md:text-xl text-foreground-secondary leading-relaxed">
-              Issue virtual cards and top up your account with cryptocurrencies via Telegram bot
-            </p>
-            <button className="btn-crypto px-8 py-4 rounded-xl text-lg font-medium inline-flex items-center gap-3">
+
+            <button className="btn-crypto px-4 sm:px-6 py-2 sm:py-3 sm:mt-6 rounded-xl text-sm sm:text-base md:text-lg font-medium inline-flex items-center gap-2">
               Start Telegram bot
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17L10.5 10.84L12.19 12.53L15 9.72L19.83 14.55L21 13.38L18.38 10.76L21 8.14Z"/>
-              </svg>
             </button>
           </div>
 
-          {/* Right Column - Phone Mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <img 
-              src={cardsImage} 
-              alt="Virtual crypto cards" 
-              className="w-[900px] h-auto float-animation"
+          {/* ───── RIGHT – IMAGES ───── */}
+          <div className="flex flex-col items-center items-end h-full relative -mb-16">
+            {/* Cards – stays on top */}
+            <img
+              src={cardsImage}
+              alt="Virtual crypto cards"
+              className="w-ful max-w-[250px] sm:max-w-[300px] md:max-w-[650px] h-auto relative z-10"
+            />
+
+            {/* Character – pushed to the bottom of the column */}
+            <img
+              src={charecters[currentBannerIndex]}
+              alt="Character"
+              className="mt-auto w-25 sm:w-28 md:w-48 lg:w-80 h-auto lg:-translate-y-10 z-20"
             />
           </div>
         </div>
